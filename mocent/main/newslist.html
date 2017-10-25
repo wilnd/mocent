@@ -1,0 +1,184 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="shortcut icon" href="image/icon.ico" type="image/x-icon" />
+<title>企业新闻</title>
+<script type="text/javascript" src="javascript/jquery-1.11.1.min.js"></script>
+<script src="javascript/find.js" type="text/javascript"></script>
+<link href="css/xwlb.css" rel="stylesheet" type="text/css" />
+<link href="css/fenye.css" rel="stylesheet" type="text/css" />
+
+</head>
+
+<body onselectstart="return false">
+	<div id="top"><img src="image/t_01.png"/>
+	</div>
+	<div id="nav">
+    	<div class="nav_inner">
+              <ul>
+               <li><a class="sy" href="main.html">首页</a></li>
+              	<li><a href="product.html">产品中心</a></li>
+              	<li><a class="active" href="news.html">企业新闻</a></li>
+              	<li><a href="clw.html">决战车联网</a></li>
+              	<li><a href="about.html">关于我们</a></li>
+              </ul>
+		</div>
+	</div>
+    <div id="main">	
+    	<div class="main_inner">
+        	<h3><a href="news.html">企业新闻</a>><a href="newslist.html">新闻列表</a>><a href="newsdetail.html">新闻详情</a></h3>
+            	
+            	<div id="xinwen">
+                	<div class="xinwen_top" id="xinwen_top">
+                    </div>
+                  <div class="fanye">
+                    	<div id="page-content-1"></div>
+                    	<div style="display:none"><input type="text" id="totalpage"></input></div>
+                   </div> 
+                   
+                    
+                </div>	
+   		 </div>
+    </div>
+	
+	<div id="bot">
+    	<div class="bot_inner">
+    		<p>©2016  深圳市爱车典科技有限公司  版权所有<br/>粤ICP备14066597号-1</p>
+		</div>
+	</div>
+	
+</body>
+
+
+<script src="javascript/fenye.js" type="text/javascript"></script>
+<script type="text/javascript">
+
+	var result=getSomeNewsList();//初始化页面并赋值第一页的新闻
+	var cum=result.length;
+	var totalPage=Math.ceil(cum/10);//总页数(向上取整)
+	$("#totalpage").val(totalPage);
+	var s=$("#totalpage").val();
+	
+	if(s>=1){
+		$("#page-content-1").css("display","block");
+		$("#page-content-1").initPaging({
+			idNum: 1,
+			totalPage: s,
+			currentPage: 1,
+			pageResides: false,
+			func: function($div_content,currentPage){
+				
+				var newsResults=getSomeNewsListByCurrentPage();//分页查询
+				setNews(newsResults);//赋值数据到页面
+				
+				//根据当前页查询新闻（后台已经写死每页显示10条数据）
+				function getSomeNewsListByCurrentPage(){
+					var result = null;
+					$.ajax({
+						type: "post",
+						url: "mocent/findNewsListByCurrentPage",
+						data:{currentPage:currentPage},
+						dataType: "json",
+						async: false,
+						success: function(ret){
+							var obj = ret;
+							if(obj != null && obj!="null"){
+								result = obj;
+							}
+						},
+						error: function(){
+							
+						}
+					});
+					
+					
+					return result;
+				}
+				
+			}
+		});
+		
+	}else{
+		$("#page-content-1").css("display","none");
+	}
+	
+
+	
+
+
+	if(window.location.hash != ''){
+		console.log(window.location.hash)
+	}
+
+	function setNews(result){
+		if(result!=null && result.length>0){
+			var j=0;
+			var innerArr = "";
+			innerArr+="<div class=\"xwlb_left\">";
+			if(result.length>0){
+				for(var i=0;i<result.length;i++){
+					j++;
+					var title=result[i].title;//标题
+					if(title.length > 17){
+						title=title.substring(0,15)+"..."
+					}
+					
+					var brief=result[i].brief;//简介
+					if(brief.length >29 && brief.length<58){
+						brief=brief.substring(0,29)+"<br/>"+brief.substring(29);
+						
+					}else if(brief.length >58 && brief.length<87){
+						
+						brief=brief.substring(0,29)+"<br/>"+brief.substring(29,60)+"<br/>"+brief.substring(60);
+						
+					}else if(brief.length >87 && brief.length<116){
+						
+						brief=brief.substring(0,29)+"<br/>"+brief.substring(29,60)+"<br/>"+brief.substring(60,92)+"<br/>"+brief.substring(92);
+					}else if(brief.length >116){
+						brief=brief.substring(0,29)+"<br/>"+brief.substring(29,60)+"<br/>"+brief.substring(60,92)+"<br/>"+brief.substring(92,110)+"...";
+					}
+					
+					var date = new Date(result[i].publish_time.time);//发布时间
+					var publishTimes=date.Format("yyyy-MM-dd");
+					var times= new Array();
+					times=publishTimes.split("-");
+					var year =times[0];
+					var mon =times[1];
+					var day =times[2];
+					
+					innerArr+="<div class=\"left\"><div class=\"top\"><div class=\"top_t\">";
+					innerArr+="<div class=\"shijian\"><span class=\"ri\">"+day+"</span>/"+mon+"<span style=\"font-size:12px;\">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class=\"nian\">"+year+"</span></div>";
+					innerArr+="<div class=\"biaoti\">"+title+"</div></div><p class=\"zhengwen\">"+brief+"</p>";
+					innerArr+=" <img src=\"image/xwxq_xianxian_03_03.png\"/></div></div>";
+					
+					if(j==5){
+						innerArr+=" </div><div class=\"xian\"><img src=\"image/xinwen_03.png\"/></div><div class=\"xwlb_right\">";
+					}
+					
+					if(j==10){
+						break;
+					}
+				}
+				
+				innerArr+="</div>";		
+				$("#xinwen_top").html(innerArr);
+			}
+		}
+		
+		
+	}
+	
+	
+	
+	$('.nav_inner ul li a').click(function(){
+		$('.nav_inner ul li a').removeClass('active')
+		$(this).addClass('active')
+
+		})
+</script>
+
+
+
+
+</html>

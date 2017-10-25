@@ -1,0 +1,73 @@
+body{
+		font-family: 'Microsoft YaHei';
+	}
+	.page-totalpage{
+		text-align: right;
+	}
+	.page-ul{
+		text-align: right;
+	}
+	.page-ul li:not(.jump-page):not(.page-record){
+		width: 35px;
+		height: 30px;
+		line-height: 30px;
+		text-align: center;
+		display: inline-block;
+		margin-top: 5px;
+		background-image: linear-gradient(45deg,#fdfdfd,#f7f7f7);
+		border: 1px solid #dddddd;
+		font-weight: bold;
+		border-radius: 2px; 
+		color: #556270;
+		cursor: pointer;
+		margin-right: 10px;
+		list-style: none;
+	}
+	.page-ul li:not(.jump-page):not(.page-record):hover{
+		border: 1px solid #43505e;
+		border-radius: 2px;
+		background-image: linear-gradient(45deg,#535f6d,#454e59);
+		color: #fff;
+	}
+	.jump-page{
+		display: inline-block;
+	}
+	.page-text{
+		width: 22px;
+	    height: 20px;
+	    line-height: 20px;
+	    text-align: center;
+	    margin: 0 5px;
+	    padding: 0;
+	    vertical-align: text-top;
+	}
+	ul.page-ul>li.active{
+		border: 1px solid #43505e !important;
+		border-radius: 2px !important;
+		background-image: linear-gradient(45deg,#535f6d,#454e59) !important;
+		color: #fff !important;
+	}
+	ul.page-ul>li.disable{
+		color: #ccc !important;
+		cursor: not-allowed !important;
+	}
+	ul.page-ul li.disable:hover{
+		border: 1px solid #dddddd !important;
+		color: #ccc !important;
+		background-image: none !important;
+		cursor: not-allowed !important;
+	}
+	.jump-page a{
+		text-decoration: none;
+		color: #43505e;
+		font-weight: bold;
+	}
+	.jump-page a:hover{
+		text-decoration: underline;
+	}
+	.page-record{
+		display: inline-block;
+		padding: 0 10px;
+		color: #43505e;
+		font-weight: bold;
+	}

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>官网后台管理系统</title>
+<link rel="shortcut icon" href="images/back.ico" type="image/x-icon" />
+<link type="text/css" rel="stylesheet" href="../jsclient/baseCss/bootstrap.css"/>
+<link type="text/css" rel="stylesheet" href="../jsclient/baseCss/jquery-ui.min.css" />
+<script type="text/javascript" src="../jsclient/jquery.min.js"></script>
+<script type="text/javascript" src="../jsclient/base.js"></script>
+<script type="text/javascript" src="../jsclient/bootstrap.min.js"></script>
+<script type="text/javascript" src="../jsclient/jquery-ui.js"></script>
+<script type="text/javascript" src="../jsclient/layoutit.js"></script>
+<script type="text/javascript" src="javascript/default.js"></script>
+<style type="text/css">
+	body{
+		background-color: #E0E0E0;
+	}
+	
+	.pageTitle{
+		background-image: url(images/headsplit.png);
+		repeat: repeat-x;
+		height: 40px;
+		line-height: 40px;
+		padding-left: 25px;
+	}
+	
+	a{
+		color: #000000
+	}
+</style>
+<base target="MocentMain"></base>
+</head>
+<body>
+	<div id="divPageFrame">
+		<div style="width: 70%;margin-left: 15%; margin-right: auto;">
+			<div class="navbar" role="navigation" id="divNavigation"></div>
+		</div>
+		<div style="width: 70%; margin-left: 15%; margin-right: auto;background-color: #FFFFFF">
+			<div id="divTitle" class="pageTitle"><b>主页</b></div>
+		</div>
+		<div style="width: 70%;margin-left: auto; margin-right: auto;background-color: #FFFFFF;overflow: auto">
+			<div id="divContent">
+				<iframe frameborder="0" id="MocentMain" name="MocentMain" scrolling="auto" src="main.html"
+			        style="z-index: 0; width:100%; height: 100%; border-right: 0px; border-left: 0px;
+			        position: absolute; border-bottom: 0px;">
+			    </iframe>
+			</div>
+		</div>
+	</div>
+</body>
+</html>

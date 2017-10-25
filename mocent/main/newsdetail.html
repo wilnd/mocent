@@ -1,0 +1,93 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>新闻详情</title>
+
+<link href="css/xwzw.css" rel="stylesheet" type="text/css" />
+<script src="javascript/jquery-1.11.1.min.js" type="text/javascript"></script>
+<script src="javascript/find.js" type="text/javascript"></script>
+<script type="text/javascript">
+$(document).ready(function(e) {
+	
+	
+	var id = getQueryString("id");
+	
+	//根据id获取新闻
+	findNewsById(id);
+	
+	//获取新闻列表(新闻详情左边标题列表)
+	getNewsTitleList();
+		
+	function getQueryString(name)
+	{
+	     var result = location.search.match(new RegExp("[\?\&]" + name+ "=([^\&]+)","i"));
+	     if(result == null || result.length < 1){
+	         return undefined;
+	     }
+	     return result[1];
+	}
+	
+	
+		
+	$('.nav_inner ul li a').click(function(){
+		$('.nav_inner ul li a').removeClass('active')
+		$(this).addClass('active')
+
+		})
+			 
+        
+    });
+</script>
+</head>
+<body>
+	<div id="top"><img src="image/t_01.png"/>
+	</div>
+	<div id="nav">
+    	<div class="nav_inner">
+              <ul>
+              	 <li><a class="sy" href="main.html">首页</a></li>
+              	<li><a href="product.html">产品中心</a></li>
+              	<li><a class="active" href="news.html">企业新闻</a></li>
+              	<li><a href="clw.html">决战车联网</a></li>
+              	<li><a href="about.html">关于我们</a></li>
+              </ul>
+    	</div>
+	</div>
+    <div id="main">
+    	<div class="main_inner">
+            <h3><a href="news.html">企业新闻</a>><a href="newslist.html">新闻列表</a>><a href="newsdetail.html">新闻详情</a></h3>	
+            <div class="xw">
+                <div class="left">
+                	<h3 id="newsTitleList">新闻列表</h3>
+                    <div class="xz">
+                    	<div class="xuanji">选集</div>
+                        <ul class="anniu">
+                        	<li><a href="about.html?flag=1">车联网行业先锋 深圳爱车典科技有限公司视频介绍</a></li>
+                        	<li><a href="about.html?flag=2">车典全新商业模式 真正打通车联网完整产业链</a></li>
+                        	<li><a href="about.html?flag=3">新一代智能车载导航 远超原车功能体验 4s店的销售利器</a></li>
+                        	<li><a href="about.html?flag=4">全新一代车主服务系统 车典完美解决预约保养难题</a></li>
+                        	<li><a href="about.html?flag=5">新一代智能车载导航 车典官方宣传片</a></li>
+                      </ul>
+                    </div>
+                </div>
+                <div class="right">
+                	<div class="jz">
+                        <h1 id="newsTitle"></h1>
+                        <div id="newsTimeAndAuthor" style="text-align: right; margin-right: 20px; margin-top: 10px; margin-bottom: 10px"></div>
+                        <div id="newsContext"></div>
+                    </div>
+                </div>
+            </div>
+    	
+    	</div>
+    </div>
+    <div class="clear"></div>
+	<div id="bot">
+    	<div class="bot_inner">
+    		<p>©2016  深圳市爱车典科技有限公司  版权所有<br/>粤ICP备14066597号-1</p>
+		</div>
+	</div>
+	;
+</body>
+</html>

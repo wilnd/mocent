@@ -1,0 +1,53 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="shortcut icon" href="image/icon.ico" type="image/x-icon" />
+<title>首页</title>
+<link href="css/main.css"rel="stylesheet" type="text/css" />
+<script src="javascript/jquery-1.11.1.min.js" type="text/javascript"></script>
+<script type="text/javascript">
+
+	$(document).ready(function(e) {
+		$('.nav_inner ul li a').click(function(){
+			$('.nav_inner ul li a').removeClass('active')
+			$(this).addClass('active');
+	
+		});
+		
+		var totalWidth = parseInt($(window).width() * 0.8);
+		$('#topLeft').width(totalWidth - 220);
+	});
+</script>
+</head>
+
+<body>
+	<div id="top">
+		<div id="topLeft" style="height: 40px; line-height: 40px;text-align:right; float:left; background-image: url(image/topbg.png); repeat: repeat-x;">
+			深圳市爱车典科技有限公司欢迎您！
+		</div>
+		<div style="float: left; width: 220px;">
+			<img src="image/topright.png"/>
+		</div>
+	</div>
+	
+	<div id="nav">
+    	<div class="nav_inner">
+              <ul>
+              	<li class="t"><a class="active" href="main.html#">首页</a></li>
+              	<li><a href="product.html">产品中心</a></li>
+              	<li><a href="news.html">企业新闻</a></li>
+              	<li><a href="clw.html">决战车联网</a></li>
+              	<li><a href="about.html">关于我们</a></li>
+              </ul>
+		</div>
+	</div>
+    <div id="fh"><a href="#"><img style="border: none" src="image/fh_03.png"/></a></div>
+	<div id="banner"><img src="image/banner_02.png"/></div>
+
+	<div id="main"><img src="image/main_03.png"/>
+	</div>
+	<div id="bot"><img src="image/bot_04.png"/>
+	</div>
+</body>
+</html>

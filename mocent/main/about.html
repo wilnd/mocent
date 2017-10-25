@@ -1,0 +1,199 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<link rel="shortcut icon" href="image/icon.ico" type="image/x-icon" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>关于我们</title>
+
+<link href="css/gywm.css" rel="stylesheet" type="text/css" />
+<script src="javascript/jquery-1.11.1.min.js" type="text/javascript"></script>
+<script src="javascript/find.js" type="text/javascript"></script>
+<script type="text/javascript">
+function getQueryString(name)
+{
+     var result = location.search.match(new RegExp("[\?\&]" + name+ "=([^\&]+)","i"));
+     if(result == null || result.length < 1){
+         return undefined;
+     }
+     return result[1];
+}
+
+$(document).ready(function(e) {
+	
+	var flag = getQueryString("flag");
+	if(flag != undefined && flag != null && flag != "")
+	{
+		switch(parseInt(flag))
+		{
+			case 1:
+				$("#divVideo").html("<iframe height=509.5 width=524.5 src='http://player.youku.com/embed/XMTU3MjI1OTg3Ng==' frameborder=0 allowfullscreen></iframe>");
+				break;
+			case 2:
+				$("#divVideo").html("<iframe height=509.5 width=524.5 src='http://player.youku.com/embed/XMTYxOTEzOTA3Ng==' frameborder=0 allowfullscreen></iframe>");
+				break;
+			case 3:
+				$("#divVideo").html("<iframe height=509.5 width=524.5 src='http://player.youku.com/embed/XMTU0MDYyNTgwMA==' frameborder=0 allowfullscreen></iframe>");
+				break;
+			case 4:
+				$("#divVideo").html("<iframe height=509.5 width=524.5 src='http://player.youku.com/embed/XMTU0MDYwMzUyNA==' frameborder=0 allowfullscreen></iframe>");
+				break;
+			case 5:
+				$("#divVideo").html("<iframe height=509.5 width=524.5 src='http://player.youku.com/embed/XMTUzODg5ODU1Ng==' frameborder=0 allowfullscreen></iframe>");
+				break;
+			default:
+				break;
+		}
+	}
+	//查询联系信息加载
+	//findContact();
+	//查询企业文化信息加载
+	//findCulture();
+	//查询出公司简介，并赋值到页面
+	//findCompany();
+	$("#MVa").click(function(){
+		//$("#MVa").append("<img src='image/spot.png' alt='0' style='padding-right: 20px'/>");
+		$("#divVideo").html("<iframe height=509.5 width=524.5 src='http://player.youku.com/embed/XMTYxOTEzOTA3Ng==' frameborder=0 allowfullscreen></iframe>");
+	  });
+		
+	$("#MVb").click(function(){
+		$("#divVideo").html("<iframe height=509.5 width=524.5 src='http://player.youku.com/embed/XMTU3MjI1OTg3Ng==' frameborder=0 allowfullscreen></iframe>");
+	  });
+	
+	$("#MVc").click(function(){
+		$("#divVideo").html("<iframe height=509.5 width=524.5 src='http://player.youku.com/embed/XMTU0MDYyNTgwMA==' frameborder=0 allowfullscreen></iframe>");
+	  });
+	
+	$("#MVd").click(function(){
+		$("#divVideo").html("<iframe height=509.5 width=524.5 src='http://player.youku.com/embed/XMTU0MDYwMzUyNA==' frameborder=0 allowfullscreen></iframe>");
+	  });
+	
+	$("#MVe").click(function(){
+		$("#divVideo").html("<iframe height=509.5 width=524.5 src='http://player.youku.com/embed/XMTUzODg5ODU1Ng==' frameborder=0 allowfullscreen></iframe>");
+	  });
+	
+	$('.nav_inner ul li a').click(function(){
+		$('.nav_inner ul li a').removeClass('active')
+		$(this).addClass('active')
+
+		})
+			 
+        
+    });
+</script>
+</head>
+<body>
+	<div id="top"><img src="image/t_01.png"/>
+	</div>
+	<div id="nav">
+    	<div class="nav_inner">
+              <ul>
+              	<li><a class="sy" href="main.html">首页</a></li>
+              	<li><a href="product.html">产品中心</a></li>
+              	<li><a href="news.html">企业新闻</a></li>
+              	<li><a href="clw.html">决战车联网</a></li>
+              	<li><a class="active" href="about.html">关于我们</a></li>
+              </ul>
+		</div>
+	</div>
+    <div id="main">
+    	<div class="main_inner">
+            <div class="gsjs">
+                <div class="gsbj">公司介绍</div>
+                <div class="zw" id="msxygsjj">
+                	<h1>
+                	公司简介
+                	</h1>
+                    <p>
+                    	车典成立于2013年9月，公司致力于汽车和信息技术两大领域的产品开发和销售，提供以导航、多媒体应用等功能为载体的车载信息平台及相关产品，并针对车联网领域提供相关产品和服务。
+                    </p>
+                    <p>
+						车典的投资者和运营者有多年相关领域从业经验，深刻理解汽车及通讯产品市场，独具兼顾的行业背景和专业知识，同时，多年一流公司的工作经历亦使工作和管理达致较高水准。
+                    </p>
+                    <p>
+						车典正进入快速发展时期，热切期望各类高素质人才的加盟，共同创造一个在日新月异的汽车相关市场中的专业公司和知名品牌。
+                    </p>
+                    <p>
+                    	我们相信，对于每一个人，只要安排在适当的岗位上，并配合相应的资源，他（她）就有愿望并能够完成他（她）的工作并体现自己的价值。
+                    </p>
+                    <p>
+						公司对员工的承诺是：尽公司所能来帮助员工不断进步，最大限度的发挥潜力，并在工作中取得成功，与公司一起分享成长的乐趣和成就感。
+    				</p>
+    				<p>
+    					敏锐的市场洞察力、专业高效的运作能力、高素质的专业人才，所有这些必将使我们拥有最为光辉的未来！ 
+    				</p>
+    				<p>“合抱之木，生于毫末；九层之台，起于累土；千里之行，始于足下。”
+    				</p>
+                </div>
+            </div>
+            <div class="sp">
+                <div class="spbj">视频</div>
+                <div class="bf">
+                    <div class="black" id="divVideo">
+                    	<iframe height=509.5 width=524.5 src='http://player.youku.com/embed/XMTU3MjI1OTg3Ng==' frameborder=0 allowfullscreen></iframe>
+                    </div>
+                    <div class="xz">
+                    	<div class="xuanji">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;选集</div>
+                        <ul class="anniu">
+                        	<li><a href="#" id="MVb">车联网行业先锋 深圳市爱车典科技有限公司视频介绍</a></li>
+                        	<li><a href="#" id="MVa">车典全新商业模式 真正打通车联网完整产业链</a></li>
+                        	<li><a href="#" id="MVc">新一代智能车载导航 远超原车功能体验 4s店的销售利器</a></li>
+                        	<li><a href="#" id="MVd">全新一代车主服务系统 车典完美解决预约保养难题</a></li>
+                        	<li><a href="#" id="MVe">新一代智能车载导航 车典官方宣传片</a></li>
+                      </ul>
+                    </div>
+                </div>
+            </div>
+            
+            
+            <div class="qywh">
+                <div class="qybj">企业文化</div>
+                <div class="zw2" id="msxyqywh">
+                <div style="margin-left: 100px; margin-top: 20px">
+                	<p>道不同，不相为谋</p>
+	                <p>好的企业文化是我们行为的准则和对事情的共同判定标准，是行为一致性的重要保证</p>
+	                <p>好的企业文化是吸引人才，保持公司持续发展的有效推动力，反之亦然</p>
+	                <p>这将是公司坚持推动执行的部分</p>
+                </div>
+                
+				<h5>以德为本<br/>
+					Trust Respect and Integrity<br/><br/>
+					
+					责任于心<br/>
+					Accountability<br/><br/>
+					
+					专业素养<br/>
+					Professional<br/><br/>
+					
+					卓越贡献<br/>
+					Innovation Contribution and High Target<br/><br/>
+					
+					携手并进<br/>
+					Teamwork and Interdependence
+					</h5>
+                </div>
+            </div>
+            
+            
+            
+            <div class="lxwm">
+                <div class="lxbj">联系我们</div>
+                <div class="zw3" id="lxwm">
+                	<p>公司名称：　　　　　　　深圳市爱车典科技有限公司<br/>   
+						联系方式：　　　　　　　王先生（13927451699）<br/>
+						公司地址：　　　　　　　深圳市南山区南海大道阳光华艺大厦A座21D<br/>
+				    </p>
+					<h5>请关注微信公众号：爱车典：</h5>
+					<div class="tu"><img src="image/erweima_10.png"/></div>
+
+                </div>
+            </div>
+
+    	</div>
+    </div>
+	<div id="bot">
+    	<div class="bot_inner">
+    		<p>©2016  深圳市爱车典科技有限公司  版权所有<br/>粤ICP备14066597号-1</p>
+		</div>
+	</div>
+</body>
+</html>

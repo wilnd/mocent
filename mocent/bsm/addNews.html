@@ -1,0 +1,130 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>添加新闻</title>
+<link type="text/css" rel="stylesheet" href="../jsclient/baseCss/bootstrap.css"/>
+<link type="text/css" rel="stylesheet" href="../jsclient/baseCss/jquery-ui.min.css" />
+<link type="text/css" rel="stylesheet" href="../jsclient/baseCss/jquery.datetimepicker.css"></link>
+<script src="javascript/jquery-1.11.1.min.js" type="text/javascript"></script>
+<script type="text/javascript" src="../jsclient/jquery.datetimepicker.js"></script>
+<script type="text/javascript" src="../jsclient/bootstrap.min.js"></script>
+<script type="text/javascript" src="../jsclient/jquery-ui.js"></script>
+<script src="javascript/update.js" type="text/javascript"></script>
+<script charset="utf-8" src="../editor/kindeditor-all.js"></script>
+<script charset="utf-8" src="../editor/lang/zh-CN.js"></script>
+<style type="text/css">
+	body
+	{
+		font-family: "微软雅黑";
+		font-size: 14px;
+	}
+	
+	.divRow{
+		height: 36px;
+		line-height: 36px;
+		margin-top: 5px;
+	}
+</style>
+<script>
+        KindEditor.ready(function(K) {
+                window.editor = K.create('#editor_id_news');
+        });
+</script>
+
+<script type="text/javascript">
+$(document).ready(function(e) {
+		
+	$("#publish_time").datetimepicker();
+	$("#publish_time").datetimepicker({
+		lang:'ch',
+		format:'Y-m-d H:m',
+		formatDate:'Y-m-d H:m',
+		minDate: '-1970/01/01',
+	});
+		
+});
+</script>
+
+</head>
+
+<body>
+	<div id="divPageFrame">
+		<div class="divRow">
+    		<div class="col-xs-2 col-sm-2" style="text-align: right;">
+	    		新闻标题：
+	    	</div>
+	    	<div class="col-xs-9 col-sm-9">
+	    		<textarea cols="80" rows="1" class="form-control" id="title" style="width: 700px"></textarea>
+	    	</div>
+    	</div>
+    	<div style="margin-top: 5px; height: 100px">
+    		<div class="col-xs-2 col-sm-2" style="text-align: right;">
+    			新闻简介：
+    		</div>
+    		<div class="col-xs-9 col-sm-9">
+    			<textarea cols="80" rows="4" class="form-control" id="newsBrief" style="width: 700px"></textarea>
+    		</div>
+    	</div>
+    	<div style="top: 5px; height: 435px">
+    		<div class="col-xs-2 col-sm-2" style="text-align: right;">
+    			详细内容：
+    		</div>
+    		<div class="col-xs-9 col-sm-9">
+    			<textarea id="editor_id_news" name="content" style="width:700px;height:420px;"></textarea>
+    		</div>
+    	</div>
+    	<div class="divRow">
+    		<div class="col-xs-2 col-sm-2" style="text-align: right;">
+    			作 者：
+    		</div>
+    		<div class="col-xs-9 col-sm-9">
+    			<input type="text" class="form-control" id="newsAuthor" style="width: 700px"></input>
+    		</div>
+    	</div>
+    	<div class="divRow">
+    		<div class="col-xs-2 col-sm-2" style="text-align: right;">
+    			发 布 时 间：
+    		</div>
+    		<div class="col-xs-9 col-sm-9">
+    			<input type="text" class="form-control" id="publish_time" name="publish_time" style="width: 700px" readonly></input>
+    		</div>
+    	</div>
+    	<div class="divRow">
+    		<div class="col-xs-2 col-sm-2" style="text-align: right;">
+    			是否置顶：
+    		</div>
+    		<div class="col-xs-9 col-sm-9">
+    			<input type="radio" name="top" id="topy"  value="a"/> 是 
+   				<input type="radio" name="top" id="topn"  value="b" checked="checked"/> 否  
+    		</div>
+    	</div>
+    	<div class="divRow">
+    		<div class="col-xs-2 col-sm-2" style="text-align: right;">
+    			是否有效：
+    		</div>
+    		<div class="col-xs-9 col-sm-9">
+    			<input type="radio" name="effective" id="effectivey"  value="c" checked="checked"/> 是 
+   				<input type="radio" name="effective" id="effectiven"  value="d" /> 否
+    		</div>
+    	</div>
+    	<div class="divRow">
+    		<div class="col-xs-2 col-sm-2" style="text-align: right;">
+    			新闻首页图片地址：
+    		</div>
+    		<div class="col-xs-9 col-sm-9">
+    			<textarea cols="80" rows="1" class="form-control" id="newsPath" style="width: 700px"></textarea>
+    		</div>
+    	</div>
+    	<div style="text-align: right; margin-top: 5px">
+    		<div class="col-xs-2 col-sm-2" style="text-align: right;">
+    			&nbsp;
+    		</div>
+    		<div class="col-xs-9 col-sm-9" style="margin-right: 700px">
+	    		<input type="button"  value="提交"  onclick="addNews()"/>  
+				<input type="reset" value="重置"  name="reset"/>
+    		</div>
+    	</div>
+	</div>
+</body>
+</html>

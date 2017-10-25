@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN" "http://struts.apache.org/dtds/struts-2.0.dtd">
+<struts>
+   	<constant name="struts.enable.DynamicMethodInvocation" value="false" />
+	<constant name="struts.devMode" value="false" />
+	<constant name="struts.action.extension" value="," />
+	<constant name="struts.i18n.encoding" value="UTF-8" />
+	<constant name="struts.multipart.maxSize" value="2147483648" />
+	
+	<package name="default" extends="struts-default" namespace="/">
+		
+	</package>
+	
+	
+	<package name="about" extends="struts-default" namespace="/">
+		<!-- 联系我们 -->
+		<action name="contact" class="mocent.Msxy.Action.ContactAction" method="updateContact">
+		</action>
+		<action name="findContact" class="mocent.Msxy.Action.ContactAction" method="findContactById">
+		</action>
+		<!-- 企业文化-->
+		<action name="culture" class="mocent.Msxy.Action.CultureAction" method="updateContact">
+		</action>
+		<action name="findCulture" class="mocent.Msxy.Action.CultureAction" method="findCultureById">
+		</action>
+		<!-- 公司简介-->
+		<action name="company" class="mocent.Msxy.Action.CompanyAction" method="updateCompany">
+		</action>
+		<action name="findCompany" class="mocent.Msxy.Action.CompanyAction" method="findCompanyById">
+		</action>
+		<!-- 车联网-->
+		<action name="updateClw" class="mocent.Msxy.Action.ClwAction" method="updateClw">
+		</action>
+		<action name="findClw" class="mocent.Msxy.Action.ClwAction" method="findClw">
+		</action>
+		<!-- 新闻 -->
+		<action name="addNews" class="mocent.Msxy.Action.NewsAction" method="addNews">
+		</action>
+		<action name="findNewsList" class="mocent.Msxy.Action.NewsAction" method="getNewsList">
+		</action>
+		<action name="findNewsById" class="mocent.Msxy.Action.NewsAction" method="findNewsById">
+		</action>
+		<action name="delNewsById" class="mocent.Msxy.Action.NewsAction" method="delNewsById">
+		</action>
+		<action name="updateNews" class="mocent.Msxy.Action.NewsAction" method="updateNews">
+		</action>
+		<action name="findNewsListByCurrentPage" class="mocent.Msxy.Action.NewsAction" method="findNewsListByCurrentPage">
+		</action>
+		<!-- 权限配置 -->
+		<action name="loadFunctions" class="mocent.Msxy.Action.FunctionAction" method="LoadFunctions">
+		</action>
+		
+		<!-- 新闻图片上传 -->
+		<action name="upload" class="mocent.Msxy.Action.UploadAction" method="execute">
+		</action>
+		
+	</package>
+	
+	
+</struts>

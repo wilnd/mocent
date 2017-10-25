@@ -1,0 +1,50 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="zh-CN">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+<title>查找新闻列表管理</title>
+
+<link type="text/css" rel="stylesheet" href="../jsclient/baseCss/jquery-ui.min.css" />
+<link type="text/css" rel="stylesheet" href="../jsclient/baseCss/bootstrap.css"/>
+<link rel="stylesheet" href="../jsclient/baseCss/ztree/demo.css" type="text/css"/>
+<link rel="stylesheet" href="../jsclient/baseCss/ztree/zTreeStyle.css" type="text/css"/>
+<link type="text/css" rel="stylesheet" href="../jsclient/baseCss/bsgrid.all.min.css"/>
+<link type="text/css" rel="stylesheet" href="../jsclient/baseCss/grid_bootstrap.min.css"/>
+<script type="text/javascript" src="../jsclient/jquery.min.js"></script>
+<script type="text/javascript" src="../jsclient/ztree/jquery-ztree-core.js"></script>
+<script type="text/javascript" src="../jsclient/ztree/jquery-ztree-excheck.js"></script>
+<script type="text/javascript" src="../jsclient/bsgrid.all.min.js"></script>
+<script type="text/javascript" src="../jsclient/grid.zh-CN.min.js"></script>
+<script type="text/javascript" src="../jsclient/bootstrap.min.js"></script>
+<script type="text/javascript" src="../jsclient/jquery-ui.js"></script>
+<script type="text/javascript" src="../jsclient/layoutit.js"></script>
+<script type="text/javascript" src="../jsclient/base.js"></script>
+<script src="javascript/update.js" type="text/javascript"></script>
+<script type="text/javascript">
+$(document).ready(function(e) {
+	loadNews();//后台管理加载新闻
+ });
+</script>
+</head>
+<body>
+	<div id="divPageFrame">
+		<div style="text-align: right; margin-right: 10px; margin-top: 5px; margin-bottom: 5px">
+			<input type="button" onclick="toAddNews()" value="添加新闻"></input>
+		</div >
+		<div id="divNewsList" style="padding-left: 10px; padding-right: 10px">
+		 	<table id="tabNewsList">
+				<tr>
+					<th w_render="id" width="50px" align="center">ID</th>
+					<th w_render="title" width="200px" align="center">标题</th>
+					<th w_render="author" width="60px" align="center">作者</th>
+					<th w_render="state" width="50px" align="center">是否有效</th>
+					<th w_render="is_top" width="50px" align="center">是否置顶</th>
+					<th w_render="editor1" width="50px" align="center">操作</th>
+					<th w_render="editor2" width="50px" align="center">操作</th>
+				</tr>
+			</table>
+		 </div>
+	</div>
+</body>
+</html>
